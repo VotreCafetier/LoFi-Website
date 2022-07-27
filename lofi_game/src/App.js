@@ -1,25 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from "react";
+import PrivateRoute from './PrivateRoute';
+import Login from './component/Login';
+import { API_AUTH } from './constants';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    loggedIn : false,
+    token : null
+  }
+
+  login = (d) => {
+    fetch(API_AUTH, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(d)
+    })
+    .then(res => {
+      if (res.status === 400) {
+          throw new Error('There was an error');
+      }
+      return res.json();
+    })
+    .then(json => {
+      if(json.token === undefined) return;
+      localStorage.setItem('token', json.token);
+      this.setState({
+        username: json.user.username,
+        loggedIn: true,
+        token: json.token
+      });
+    })
+    .catch(ex => {
+      console.log(ex);
+    });
+  }
+
+  render() {
+    return (
+      <Router>
+          <Switch>
+            <Route path="/Login">
+              <Login isLoggedIn={this.state.loggedIn} login={this.login}/>
+            </Route>
+            <PrivateRoute path="/" isLoggedIn={this.state.loggedIn} token={this.state.token} />
+          </Switch>
+      </Router>
+    );
+  }
 }
 
 export default App;
