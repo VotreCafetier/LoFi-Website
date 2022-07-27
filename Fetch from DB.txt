@@ -1,0 +1,1 @@
+Scaffold-DbContext -Connection Name=LofiDB Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models/Generated -ContextDir Data -Force -Context _dbContext -DataAnnotation
