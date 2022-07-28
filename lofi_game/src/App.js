@@ -1,55 +1,28 @@
-import React, {Component} from "react";
-import PrivateRoute from './PrivateRoute';
-import Login from './component/Login';
-import { API_AUTH } from './constants';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
+import Error from './pages/Error';
+import Layout from './pages/Layout';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Shop from './pages/Shop';
+import ForgotPassword from './pages/ForgotPassword';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-class App extends Component {
-  state = {
-    loggedIn : false,
-    token : null
-  }
-
-  login = (d) => {
-    fetch(API_AUTH, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(d)
-    })
-    .then(res => {
-      if (res.status === 400) {
-          throw new Error('There was an error');
-      }
-      return res.json();
-    })
-    .then(json => {
-      if(json.token === undefined) return;
-      localStorage.setItem('token', json.token);
-      this.setState({
-        username: json.user.username,
-        loggedIn: true,
-        token: json.token
-      });
-    })
-    .catch(ex => {
-      console.log(ex);
-    });
-  }
-
-  render() {
+// this is a basic router
+function App() {
     return (
-      <Router>
-          <Switch>
-            <Route path="/Login">
-              <Login isLoggedIn={this.state.loggedIn} login={this.login}/>
-            </Route>
-            <PrivateRoute path="/" isLoggedIn={this.state.loggedIn} token={this.state.token} />
-          </Switch>
-      </Router>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="/Login" element={<Login />} />
+                    <Route path="/Register" element={<Register />} />
+                    <Route path="/ForgotPassword" element={<ForgotPassword />} />
+                    <Route path="/Shop" element={<Shop />} />
+                    <Route path="*" element={<Error />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     );
   }
-}
 
 export default App;
