@@ -21,6 +21,8 @@ Theme https://bootswatch.com/lumen/
 
 ## Left todo [BACK]
 - Create all routes
+- Remove unnessessary rows when return data
+- Create delete function in api (where you just unlist the user)
 - READ, CREATE, UPDATE User
 - Create Password hasher
 - READ Location
@@ -32,15 +34,21 @@ Theme https://bootswatch.com/lumen/
 - Add YoutubeID
 
 # All API Routes
-/Items
-/Item{ID}
-/Locations
+/Items\
+/Item{ID}\
+/Locations\
 /Types
 
-[Show only connected user]/User{ID}/Items
-[Show only connected user]/User{ID}/Buy{ItemID}
-[Show only connected user]/User{ID}/Update
-/User/Register
+[Show only connected user]/User{ID}/Items\
+[Show only connected user]/User{ID}/Buy{ItemID}\
+[Show only connected user]/User{ID}/Update\
+/User/Register\
 /User/Login
+
+
+# Security
+## How it will work
+No session nor token, it will be a cookie id which is ran against the db
+
 
 
