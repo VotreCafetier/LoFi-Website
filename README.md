@@ -22,6 +22,7 @@ Theme https://bootswatch.com/lumen/
 ## Left todo [BACK]
 - Create all routes
 - Remove unnessessary rows when return data
+- Create delete function in api (where you just unlist the user)
 - READ, CREATE, UPDATE User
 - Create Password hasher
 - READ Location
