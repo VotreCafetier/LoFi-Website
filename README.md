@@ -44,3 +44,9 @@ Theme https://bootswatch.com/lumen/
 /User/Login
 
 
+# Security
+## How it will work
+No session nor token, it will be a cookie id which is ran against the db
+
+
+
