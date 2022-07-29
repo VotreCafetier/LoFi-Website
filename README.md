@@ -21,6 +21,7 @@ Theme https://bootswatch.com/lumen/
 
 ## Left todo [BACK]
 - Create all routes
+- Remove unnessessary rows when return data
 - READ, CREATE, UPDATE User
 - Create Password hasher
 - READ Location
