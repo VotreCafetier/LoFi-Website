@@ -32,16 +32,16 @@ Theme https://bootswatch.com/lumen/
 - Add YoutubeID
 
 # All API Routes
-/Items_
-/Item{ID}_
-/Locations_
-/Types_
+/Items__
+/Item{ID}__
+/Locations__
+/Types__
 
-[Show only connected user]/User{ID}/Items_
-[Show only connected user]/User{ID}/Buy{ItemID}_
-[Show only connected user]/User{ID}/Update_
-/User/Register_
-/User/Login_
+[Show only connected user]/User{ID}/Items__
+[Show only connected user]/User{ID}/Buy{ItemID}__
+[Show only connected user]/User{ID}/Update__
+/User/Register__
+/User/Login__
 
 
 # Security
