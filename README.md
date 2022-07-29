@@ -35,13 +35,13 @@ Theme https://bootswatch.com/lumen/
 /Items\
 /Item{ID}\
 /Locations\
-/Types\
+/Types
 
 [Show only connected user]/User{ID}/Items\
 [Show only connected user]/User{ID}/Buy{ItemID}\
 [Show only connected user]/User{ID}/Update\
 /User/Register\
-/User/Login\
+/User/Login
 
 
 # Security
