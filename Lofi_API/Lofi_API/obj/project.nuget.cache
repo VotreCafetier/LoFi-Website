@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/2hVHwV43m7h905aNUyxhPUTmId4JrTnvPNEcophyBrpeKcB/L1EjFYJgpdwguiIdLGcr2xhivglfZftWeI6BQ==",
+  "dgSpecHash": "hZmMU4swNGFf73SrM4+3aZ6mLi96Az97mOI8NLqOttqBi0KcAsxWxqf67XmmkNHfH2ROfGEEznBHQAzy07xNew==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dany\\Desktop\\LoFi Website\\Lofi_API\\Lofi_API\\Lofi_API.csproj",
+  "projectFilePath": "C:\\Users\\Dany\\Desktop\\LoFi-Website\\Lofi_API\\Lofi_API\\Lofi_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dany\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Dany\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
