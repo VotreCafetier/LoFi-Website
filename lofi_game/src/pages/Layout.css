@@ -1,0 +1,13 @@
+form{
+    max-width: 500px!important;
+    margin: auto;
+}
+
+html, body, #root{
+    min-height: 100vh;
+}
+
+section{
+    min-height: calc(100vh - 143px);
+    position: relative;
+}

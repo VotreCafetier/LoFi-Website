@@ -1,9 +1,7 @@
-import React from 'react'
-
 const Login = () => {
   return (
     <form className='container'>
-      <h1>Login</h1>
+      <h1 className='mt-4'>Login</h1>
 
       <div className="form-group">
         <label for="Email" className="form-label mt-4">Email address</label>
@@ -16,7 +14,7 @@ const Login = () => {
       </div>
 
       <div className="form-group text-center">
-        <button type="submit" className="btn btn-primary mt-4">Submit</button>
+        <button type="submit" className="btn btn-primary mt-4">Login</button>
       </div>
     </form>
   )
