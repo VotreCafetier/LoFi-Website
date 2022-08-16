@@ -33,17 +33,19 @@ Theme https://bootswatch.com/lumen/
 - Add SpotifyID
 - Add YoutubeID
 
-# All API Routes
-/Items\
-/Item{ID}\
-/Locations\
-/Types
+# API Routes
+## Public
+/api/Items\
+/api/Item{ID}\
+/api/Locations\
+/api/Types\
+/api/User/Register\
+/api/User/Login 
 
-[Show only connected user]/User{ID}/Items\
-[Show only connected user]/User{ID}/Buy{ItemID}\
-[Show only connected user]/User{ID}/Update\
-/User/Register\
-/User/Login
+## Private
+/api/User{ID}/Items\
+/api/User{ID}/Buy{ItemID}\
+/api/User{ID}/Update
 
 
 # Security
