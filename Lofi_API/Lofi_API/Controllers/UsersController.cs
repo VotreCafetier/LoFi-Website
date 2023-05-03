@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Lofi_API.Data;
 using Lofi_API.Models.Generated;
@@ -70,9 +65,7 @@ namespace Lofi_API.Controllers
         public async Task<IActionResult> Update(long id, Luser luser)
         {
             if (id != luser.Userid)
-            {
                 return BadRequest();
-            }
 
             _context.Entry(luser).State = EntityState.Modified;
 
@@ -110,9 +103,7 @@ namespace Lofi_API.Controllers
          * 
          */
         [HttpGet("Items")]
-        public async Task<ActionResult> GetUserItems()
-        {
-            return NoContent();
-        }
+        public async Task<ActionResult> GetUserItems() => 
+            NoContent();
     }
 }
